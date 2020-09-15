@@ -19,6 +19,20 @@ module.exports = {
           updatedAt: new Date(),
           todoListId: 2,
         },
+        {
+          task: "Go work out at 8pm",
+          deadline: "today",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          todoListId: 2,
+        },
+        {
+          task: "Take the dog out",
+          deadline: "at 6 pm",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          todoListId: 1,
+        },
       ],
       {}
     );
