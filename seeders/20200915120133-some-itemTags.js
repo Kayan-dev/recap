@@ -31,13 +31,13 @@ module.exports = {
         },
         {
           tagId: 3,
-          todoItemId: 5,
+          todoItemId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           tagId: 4,
-          todoItemId: 5,
+          todoItemId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
