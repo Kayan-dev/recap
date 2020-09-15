@@ -1,12 +1,12 @@
 const { user, todoItem, todoList } = require("./models");
 
-// async function listsWithUsers() {
-//   const lists = await todoList.findAll({
-//     include: [user],
-//   });
+async function listsWithUsers() {
+  const lists = await todoList.findAll({
+    include: [user],
+  });
 
-//   return lists.map((list) => list.get({ plain: true }));
-// }
+  return lists.map((list) => list.get({ plain: true }));
+}
 
 /*
 If you only want to include the users name
@@ -31,7 +31,7 @@ Get the list of each user
 
 // async function getUsers() {
 //   const allUsers = await user.findAll({
-//     include: { model: todoList, attributes: ["name"] },
+//     include: { model: todoList, attributes: ["id"] },
 //   });
 //   return allUsers.map((user) => user.get({ plain: true }));
 // }
@@ -43,10 +43,11 @@ Get items from users' lists
 */
 
 async function getItems() {
-  const allItems = await todoItem.findAll({
-    include: { model: todoList, attributes: ["name"] },
+  const item = await todoItem.findByPk(2, {
+    include: { model: todoList },
   });
-  return allItems.map((item) => item.get({ plain: true }));
+  // return allItems.map((item) => item.get({ plain: true }));
+  return item.get({ plain: true });
 }
 
 getItems().then((items) => console.log(items));
