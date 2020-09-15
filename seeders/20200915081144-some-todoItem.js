@@ -10,12 +10,14 @@ module.exports = {
           deadline: "today",
           createdAt: new Date(),
           updatedAt: new Date(),
+          todoListId: 1,
         },
         {
           task: "finish begroting",
           deadline: "till friday",
           createdAt: new Date(),
           updatedAt: new Date(),
+          todoListId: 2,
         },
       ],
       {}
@@ -23,6 +25,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete("users", null, {});
+    await queryInterface.bulkDelete("todoItems", null, {});
   },
 };

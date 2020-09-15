@@ -9,11 +9,13 @@ module.exports = {
           name: "buy meat",
           createdAt: new Date(),
           updatedAt: new Date(),
+          userId: 1,
         },
         {
           name: "buy milk",
           createdAt: new Date(),
           updatedAt: new Date(),
+          userId: 2,
         },
       ],
       {}
