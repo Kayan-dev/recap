@@ -28,23 +28,25 @@ If you only want to include the users name
 /*
 Get the list of each user 
 */
-async function getUsers() {
-  const allUsers = await user.findAll({
-    include: { model: todoList, attributes: ["name"] },
-  });
-  return allUsers.map((user) => user.get({ plain: true }));
-}
 
-getUsers().then((users) => console.log(users));
+// async function getUsers() {
+//   const allUsers = await user.findAll({
+//     include: { model: todoList, attributes: ["name"] },
+//   });
+//   return allUsers.map((user) => user.get({ plain: true }));
+// }
+
+// getUsers().then((users) => console.log(users));
 
 /*
 Get items from users' lists
 */
-// async function getItems() {
-//   const allItems = await todoItem.findAll({
-//     include: { model: todoList, attributes: ["name"] },
-//   });
-//   return allItems.map((item) => item.get({ plain: true }));
-// }
 
-// getItems().then((items) => console.log(items));
+async function getItems() {
+  const allItems = await todoItem.findAll({
+    include: { model: todoList, attributes: ["name"] },
+  });
+  return allItems.map((item) => item.get({ plain: true }));
+}
+
+getItems().then((items) => console.log(items));
